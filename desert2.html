@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/vinegar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgba(241, 225, 158, 0.589);
+    }
+
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {
+        opacity: 0.7;
+    }
+
+    .food {
+        float: left;
+        padding: 0.5rem;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 30%;
+        height: 30%;
+    }
+
+
+    /* Add Animation */
+    .modal-content {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    .detail-content {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        position: absolute;
+        opacity: 1;
+        bottom: -30rem;
+    }
+
+    .capt,
+    .cnt {
+        font-size: 1rem;
+    }
+
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
+
+    .pagination {
+        border: hidden;
+        padding-left: 125rem;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+
+                <a href="Vinegar_homepage.html"><img style="width: 12%;" src="images/logo5.png" alt="" srcset=""></a>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Vinegar_homepage.html">HOME</a></li>
+                    <li><a href="Vinegar_about.html">ABOUT US</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MEALS</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regular.html">Regular</a></li>
+                            <li><a href="Lunch.html">Lunch</a></li>
+                            <li><a href="snacks.html">Snacks</a></li>
+                            <li><a href="desert.html">Dessert</a></li>
+                            <li><a href="beverage.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="Awards.html">AWARDS</a></li>
+                    <li><a href="Vinegar_catering.html">CATERING</a></li>
+                    <li><a href="Vinegar_recipe.html">RECIPE OF THE MONTH</a></li>
+                    <li><a href="Vinegar_contactus.html">CONTACT US</a></li>
+                    <li><a href="Vinegar_feedback.html">FEEDBACK</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <div class="header_padding" style=" margin-top: 8rem; margin-bottom: 2rem; text-align: center;">
+            <H1
+                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(141, 109, 67);">
+                - DESSERT -</H1>
+        </div>
+        <hr>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/BlueberryLemonadePieRecipe.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(1)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/MochiIceCream.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(2)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/UbeIceCream.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(3)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/FortuneCookies.jpg" alt="" style="width: 100%"
+                        onclick="openModal();currentSlide(4)">
+                </div>
+
+                <div class="col-sm-6 col-md-6 food">
+                    <img id="myImg" src="images/MintIceCream.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(5)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/EasyCherrySauce.jpg" alt="" style="width: 100%"
+                        onclick="openModal();currentSlide(6)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/FrozenChocolateVelvet.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(7)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/CaramelCheesecake.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(8)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/RedVelvetCheesecake.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(9)">
+                </div>
+
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="mySlides">
+                    <img src="images/BlueberryLemonadePieRecipe.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Blueberry Lemonade Pie</h3>
+                        <p class="cnt">
+                            Blueberries give this frozen lemonade pie extra color and flavor (fresh blueberries,
+                            sweetened
+                            condensed milk, frozen lemonade, whipped topping, regular or "lite," thawed in the
+                            refrigerator,
+                            graham cracker pie crust), and it is a fabulous pie for a hot summer day. The pie takes just
+                            a
+                            few minutes to mix - freeze and eat!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/MochiIceCream.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Mochi Ice Cream</h3>
+                        <p class="cnt">
+                            Mochi ice cream is a confection made from Japanese sweet glutinous rice flour with an ice
+                            cream
+                            filling. The ice cream flavors the confection while the mochi adds sweetness and texture.
+                            When
+                            making mochi, it is dusted with either cornstarch, potato starch, or additional rice flour
+                            to
+                            keep it from sticking while being rolled, cut, and formed.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/UbeIceCream.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Ube Ice Cream</h3>
+                        <p class="cnt">
+                            Ube (pronounced ooh-beh) is a purple yam from the Philippines with a mild, sweet flavor. The
+                            taste has been described as slightly nutty, or as a cross between vanilla and pistachio. It
+                            is
+                            frequently incorporated into desserts in Filipino cuisine with ube ice cream being one of
+                            the
+                            most popular preparations.Ube has been incorporated into everything from brownies, macarons,
+                            cupcakes, and donuts to waffles and pancakes, even lattes and milkshakes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/FortuneCookies.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Fortune Cookies</h3>
+                        <p class="cnt">
+                            Fortune cookies can be tricky to make―it's important to make sure that the cookie batter is
+                            spread out evenly on the baking sheet. Instead of using the back of a wooden spoon to spread
+                            the
+                            batter, it's better to gently tilt the baking sheet back and forth as needed. Wearing cotton
+                            gloves makes it easier to handle and shape the hot cookies. This fortune cookie recipe makes
+                            about 10 cookies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/MintIceCream.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Mint Ice Cream</h3>
+                        <p class="cnt">
+                            This version of mint ice cream tastes just like a shamrock shake. The recipe calls for green
+                            food coloring for visual appeal, but it can easily be omitted if you are a purist. Whether
+                            you
+                            are using an old-fashioned hand-crank ice cream maker surrounded by an ice and salt mixture,
+                            a
+                            motorized appliance with a freezer bowl, or a high-end counter-top machine with a
+                            self-contained
+                            freezer bowl.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/EasyCherrySauce.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Easy Cherry Sauce</h3>
+                        <p class="cnt">
+                            Cherries are rich in antioxidants and anti-inflammatory compounds and packed with vitamin C
+                            and
+                            fiber.When in season, plump and sweet cherries are wonderful treats eaten raw, but they also
+                            make wonderful jellies, sauces, syrups, pie fillings, and great additions to frozen
+                            desserts.While most cooks gravitate towards more common sauces like strawberry, making a
+                            cherry
+                            sauce is simple and will give you a versatile ingredient to add to many sweet treats.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/FrozenChocolateVelvet.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Frozen Chocolate Velve</h3>
+                        <p class="cnt">
+                            This frozen chocolate dessert has a texture of velvet. It's rich, smooth, creamy, and
+                            absolutely
+                            delicious. This dessert serves a crowd, and it's perfect for entertaining because it must be
+                            made ahead of time. Because the filing isn't ice cream, pudding, or pie filling, it doesn't
+                            freeze very hard nor does it melt into a puddle if it sits at room temperature for a while.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/CaramelCheesecake.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Caramel Cheesecake</h3>
+                        <p class="cnt">
+                            Dripping with delectable salted caramel, this cheesecake is pure decadence. This caramel
+                            cheesecake features not only a blanket of caramel sauce poured over the top, but there is
+                            also a
+                            layer of caramel poured over the graham cracker crust. Every bite is perfect for caramel
+                            lovers.
+                            Be sure to use a high-quality flaked sea salt for the garnish in this recipe. It will taste
+                            the
+                            best and offer the most elegant presentation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/RedVelvetCheesecake.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Red Velvet Cheesecake</h3>
+                        <p class="cnt">
+                            If you crave the red velvet cheesecake from the Cheesecake Factory, you will be delighted to
+                            know it is easy to recreate this restaurant favorite at home. The decadent, vibrantly
+                            colored
+                            cheesecake is topped with a signature cream cheese frosting just like the original. The key
+                            to a
+                            perfect cheesecake is to resist overbaking the filling.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <ul class="pagination">
+            <li><a href="desert.html">1</a></li>
+            <li><a href="desert2.html">2</a></li>
+        </ul>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="Vinegar_homepage.html">Home</a></li>
+                            <li><a href="Vinegar_about.html">About us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="Awards.html">Awards</a></li>
+                            <li><a href="Vinegar_catering.html">Catering</a></li>
+                            <li><a href="Vinegar_recipe.html">Recipe of the month </a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="regular.html">Regular</a></li>
+                            <li><a href="Lunch.html">Lunch</a></li>
+                            <li><a href="snacks.html">Snacks</a></li>
+                            <li><a href="desert.html">Dessert</a></li>
+                            <li><a href="beverage.html">Beverages</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="Vinegar_contactus.html">Contact us</a></li>
+                            <li><a href="Vinegar_feedback.html">Feedback</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Vinegar Food Restaurant</h3>
+                        <p
+                            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 1.5rem;">
+                            Vinegar Food Restaurant is a registered brand of JADONS Ltd. <br>
+                            Business registration number: 2233445566 issued by the Ministry of Commerce <br>
+                            Headquarter office: 999 Pasteur Street, District 1, Ho Chi Minh City, Viet Nam. <br>
+                            Hotline: +84 1900 9999 - +84 1900 9898 <br>
+                        </p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                                class="icon ion-social-twitter"></i></a><a href="#"><i
+                                class="icon ion-social-snapchat"></i></a><a href="#"><i
+                                class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">&copy 1990 - 2020 Vinegar Food Restaurant - All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script>
+
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementsById("mySlides");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close");
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>
+
+</html>

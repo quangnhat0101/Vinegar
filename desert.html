@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/vinegar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgba(241, 225, 158, 0.589);
+    }
+
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {
+        opacity: 0.7;
+    }
+
+    .food {
+        float: left;
+        padding: 0.5rem;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 30%;
+        height: 30%;
+    }
+
+
+    /* Add Animation */
+    .modal-content {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    .detail-content {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        position: absolute;
+        opacity: 1;
+        bottom: -30rem;
+    }
+
+    .capt,
+    .cnt {
+        font-size: 1rem;
+    }
+
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(0)
+        }
+
+        to {
+            -webkit-transform: scale(1)
+        }
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+        .modal-content {
+            width: 100%;
+        }
+    }
+
+    .pagination {
+        border: hidden;
+        padding-left: 125rem;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+
+                <a href="Vinegar_homepage.html"><img style="width: 12%;" src="images/logo5.png" alt="" srcset=""></a>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Vinegar_homepage.html">HOME</a></li>
+                    <li><a href="Vinegar_about.html">ABOUT US</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MEALS</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regular.html">Regular</a></li>
+                            <li><a href="Lunch.html">Lunch</a></li>
+                            <li><a href="snacks.html">Snacks</a></li>
+                            <li><a href="desert.html">Dessert</a></li>
+                            <li><a href="beverage.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="Awards.html">AWARDS</a></li>
+                    <li><a href="Vinegar_catering.html">CATERING</a></li>
+                    <li><a href="Vinegar_recipe.html">RECIPE OF THE MONTH</a></li>
+                    <li><a href="Vinegar_contactus.html">CONTACT US</a></li>
+                    <li><a href="Vinegar_feedback.html">FEEDBACK</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <div class="header_padding" style=" margin-top: 8rem; margin-bottom: 2rem; text-align: center;">
+            <H1
+                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(141, 109, 67);">
+                - DESSERT -</H1>
+        </div>
+        <hr>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 food">
+                    <img id="myImg" src="images/mason-jar-ice-cream.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(1)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/RumRaisinIceCream.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(2)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/lofthouse-cookies.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(3)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/ChocolateLavaPuddings.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(4)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/ChocolateStrawberry2.jpg" alt="" style="width: 100%"
+                        onclick="openModal();currentSlide(5)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/EdibleCookieDough.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(2)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/SummerBerryGalette.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(3)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/WatermelonGranita.jpg" alt="" style="width:100%"
+                        onclick="openModal();currentSlide(4)">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img id="myImg" src="images/strawberryParfait2.jpg" alt="" style="width: 100%"
+                        onclick="openModal();currentSlide(5)">
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="mySlides">
+                    <img src="images/mason-jar-ice-cream.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Mason jar ice cream</h3>
+                        <p class="cnt">
+                            Mason jar ice cream is the easiest, fastest way to enjoy the exact flavor you're dreaming of
+                            without an ice cream maker (or a trip to the ice cream shop). Whether you're a fresh fruit
+                            fan, cookies 'n cream obsessive, or devout chocoholic, if you can dream of your ideal frozen
+                            treat. Try swirling in fun ribbons like salted caramel, peanut butter sauce, or brownie
+                            batter for an extra-delicious experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/RumRaisinIceCream.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Rum Raisin Ice Cream</h3>
+                        <p class="cnt">
+                            There is nothing quite like enjoying a scoop of rum raisin ice cream. The smooth, rich
+                            vanilla ice cream base is studded with rum-spiked raisins for a unique treat. It's like
+                            being able to have a cocktail and eat it, too! This version of rum raisin ice cream uses rum
+                            in two ways. A little bit is incorporated into the ice cream base itself—there can't be too
+                            much since alcohol has a lower freezing temperature and can cause the ice cream to not set
+                            properly in the freezer.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/lofthouse-cookies.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Lofthouse Cookies</h3>
+                        <p class="cnt">
+                            Lofthouse cookies are the soft and delicious sugar cookies with a sweet fluffy frosting you
+                            find in the bakery section of just about every supermarket. First, sour cream is mixed into
+                            the
+                            batter. This adds moisture to the soft cookies, and the acid helps activate the baking soda.
+                            The recipe also calls for cake flour instead of all-purpose flour. This finely milled flour
+                            has
+                            a low protein content, which results in a delicate and fine crumb. Finally, it is important
+                            not to overbake Lofthouse cookies. Make sure they are set and just starting to become golden
+                            brown on the bottom.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/ChocolateLavaPuddings.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Chocolate Lava Cakes</h3>
+                        <p class="cnt">
+                            These chocolate lava cakes are the perfect easy and elegant dessert for two. Some call
+                            chocolate lava cakes, molten chocolate cakes, or chocolate moelleux (from the French for
+                            "soft"). No matter who invented the dish or what you call it, this sophisticated dessert has
+                            become a classic offering on high-end restaurant menus as well as for home cooks.The lava
+                            cake
+                            batter is whipped up in a matter of minutes in the microwave, then it's spooned into a
+                            standard
+                            size muffin pan and baked just until set on the sides, but not yet set in the middle.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/ChocolateStrawberry2.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Chocolate strawberries</h3>
+                        <p class="cnt">
+                            Chocolate-covered strawberries make an elegant dessert or a quick romantic as there's
+                            nothing more romantic than a juicy berry dipped in rich chocolate.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/EdibleCookieDough.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Edible Cookie Dough</h3>
+                        <p class="cnt">
+                            This cake for edible cookie dough is prepared without eggs and uses heat-treated flour for
+                            the batter. Simply toasting the flour before use in this recipe will not only kill any
+                            lingering
+                            bacteria like E. coli, it will also add a delicious nutty flavor to the cookie dough from
+                            the toasting process.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/SummerBerryGalette.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Summer Berry Galette</h3>
+                        <p class="cnt">
+                            Summer cooking needs to be simple, quick, and without too much fuss in the kitchen. So say
+                            hello to this summer berry galette, which is destined to be the recipe of the season. With a
+                            rich, sweet pastry that is filled with your favorite berries, you will be making this over
+                            and
+                            over. All soft summer fruits can be used in this recipe but should be fresh, not frozen.
+                            Choose
+                            between raspberries, strawberries, blueberries, or blackberries, either on their own or as a
+                            mixture. Most fruits can be cooked whole except strawberries, which should be sliced.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/WatermelonGranita.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Watermelon Granita</h3>
+                        <p class="cnt">
+                            Bursting with sweet watermelon and bright, tangy lime, this granita is a cool, refreshing
+                            dessert that requires no ice cream machine or churning. With only three ingredients, it's an
+                            easy treat to whip up in the summer heat. Granita is a simple Italian dessert, originating
+                            from Sicily. It's made with sugar, water, and some kind of fruit. You'll love this dessert
+                            if you like sorbet or Italian ice. It's very similar to both of those treats but has more
+                            texture. The unique way it's created makes it seem like you are eating frozen fruity
+                            crystals.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/strawberryParfait2.jpg" style="width:100%">
+                    <div class="detail-content">
+                        <h3 class="capt">Strawberry Parfait</h3>
+                        <p class="cnt">
+                            Strawberries, cream, and summer: these three belong together. It's so easy to put
+                            strawberries into a bowl and simply pour over a little cream for a quick summertime treat.
+                            Strawberries play the starring role in this recipe, so make sure the ones you get are large,
+                            juicy, and sweet. For the whipped cream, always use real vanilla bean extract, never
+                            essence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <ul class="pagination">
+            <li><a href="desert.html">1</a></li>
+            <li><a href="desert2.html">2</a></li>
+        </ul>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="Vinegar_homepage.html">Home</a></li>
+                            <li><a href="Vinegar_about.html">About us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="Awards.html">Awards</a></li>
+                            <li><a href="Vinegar_catering.html">Catering</a></li>
+                            <li><a href="Vinegar_recipe.html">Recipe of the month </a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="regular.html">Regular</a></li>
+                            <li><a href="Lunch.html">Lunch</a></li>
+                            <li><a href="snacks.html">Snacks</a></li>
+                            <li><a href="desert.html">Dessert</a></li>
+                            <li><a href="beverage.html">Beverages</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="Vinegar_contactus.html">Contact us</a></li>
+                            <li><a href="Vinegar_feedback.html">Feedback</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Vinegar Food Restaurant</h3>
+                        <p
+                            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 1.5rem;">
+                            Vinegar Food Restaurant is a registered brand of JADONS Ltd. <br>
+                            Business registration number: 2233445566 issued by the Ministry of Commerce <br>
+                            Headquarter office: 90 Pasteur Street, District 1, Ho Chi Minh City, Viet Nam. <br>
+                            Hotline: +84 1900 9999 - +84 1900 9898 <br>
+                        </p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                                class="icon ion-social-twitter"></i></a><a href="#"><i
+                                class="icon ion-social-snapchat"></i></a><a href="#"><i
+                                class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">&copy 1990 - 2020 Vinegar Food Restaurant - All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script>
+
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementsById("mySlides");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close");
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>
+
+</html>

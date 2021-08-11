@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/vinegar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<style>
+    body {
+        font-family: Verdana, sans-serif;
+        background-color: rgba(241, 225, 158, 0.589);
+    }
+
+    h2 {
+        margin-top: 7rem;
+    }
+
+    .cnt {
+        background-color: rgb(41, 29, 29);
+        /*width: 41rem;
+        height: 18rem;*/
+        color: white;
+        font-size: 15px;
+        text-align: justify;
+        padding: 1rem;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .row>.food {
+        padding: 1rem;
+    }
+
+
+
+    .food {
+        float: left;
+        padding: 1rem;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 7rem;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(240, 154, 154, 0.493);
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        width: 30%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: rgb(236, 145, 145);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .mySlides {
+        display: none;
+    }
+
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: white;
+        font-size: 12px;
+        padding: 19px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    .demo {
+        opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+    img.hover-shadow {
+        transition: 0.3s;
+    }
+
+    .hover-shadow:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .pagination {
+        border: hidden;
+        padding-left: 110rem;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+
+                <a href="Vinegar_homepage.html"><img style="width: 12%;" src="images/logo5.png" alt="" srcset=""></a>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Vinegar_homepage.html">HOME</a></li>
+                    <li><a href="Vinegar_about.html">ABOUT US</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MEALS</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regular.html">Regular</a></li>
+                            <li><a href="Lunch.html">Lunch</a></li>
+                            <li><a href="snacks.html">Snacks</a></li>
+                            <li><a href="desert.html">Dessert</a></li>
+                            <li><a href="beverage.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="Awards.html">AWARDS</a></li>
+                    <li><a href="Vinegar_catering.html">CATERING</a></li>
+                    <li><a href="Vinegar_recipe.html">RECIPE OF THE MONTH</a></li>
+                    <li><a href="mailto:abc@gmail.com">CONTACT US</a></li>
+                    <li><a href="#">FEEDBACK</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <div class="header_padding" style=" margin-top: 8rem; margin-bottom: 2rem; text-align: center;">
+            <H1
+                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(141, 109, 67);">
+                - REGULAR -</H1>
+        </div>
+        <hr>
+
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 food">
+                        <img src="images/Palacinky.jpg" style="width:100%; " onclick="openModal();currentSlide(1)"
+                            class="hover-shadow cursor">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 food">
+                        <img src="images/Currywurst.jpg" style="width:100%" onclick="openModal();currentSlide(2)"
+                            class="hover-shadow cursor">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 food">
+                        <img src="images/pizzaitaly.jpg" style="width:100%" onclick="openModal();currentSlide(3)"
+                            class="hover-shadow cursor">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 food">
+                        <img src="images/herring.jpg" style="width:100%" onclick="openModal();currentSlide(4)"
+                            class="hover-shadow cursor">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 food">
+                        <img src="images/fullbreakfast.jpg" style="width:100%" onclick="openModal();currentSlide(5)"
+                            class="hover-shadow cursor">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 food">
+                        <img src="images/goulash.jpg" style="width:100%" onclick="openModal();currentSlide(6)"
+                            class="hover-shadow cursor">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 food">
+                        <img src="images/struklji.jpg" style="width:100%" onclick="openModal();currentSlide(7)"
+                            class="hover-shadow cursor">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 food">
+                        <img src="images/crème_catalan.png" style="width:100%" onclick="openModal();currentSlide(8)"
+                            class="hover-shadow cursor">
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 food">
+                        <img src="images/crepes.jpg" style="width:100%" onclick="openModal();currentSlide(9)"
+                            class="hover-shadow cursor">
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="myModal" class="modal">
+
+                <div class="modal-content">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="mySlides">
+                        <div class="numbertext">1/9</div>
+                        <img src="images/Palacinky.jpg" style="width:100%">
+                        <p class="cnt caption">The Czech Republic is probably most famous for its great
+                            variety of pilsner beers, but the
+                            country also serves up some tasty Czech foods to soak up all that alcohol. One of the
+                            must-eat dishes in Prague are palacinky pancakes. These crepe-like desserts are filled with
+                            fruit jam and served rolled up.</p>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2/9</div>
+                        <img src="images/Currywurst.jpg" style="width:100%">
+                        <p class="cnt caption">Currywurst is a German national dish consisting of hot
+                            pork sausage cut into slices and
+                            seasoned with curry sauce (regularly consisting of ketchup or tomato paste blended with
+                            curry) and generous amounts of curry powder, or a ready-made ketchup-based sauce seasoned
+                            with curry and other spices. French fries or bread rolls serve as a side dish.</p>
+
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3/9</div>
+                        <img src="images/pizzaitaly.jpg" style="width:100%">
+                        <p class="cnt caption">There are few countries as well-known for great cuisine
+                            as Italy. And while there’s more to
+                            Italian food than just pizza and pasta, you’ve still got to try the original. You’ve got to
+                            try it in Naples. If you can. Oh, and if you’re not in Italy — might consider trying it at
+                            Vinegar.</p>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">4/9</div>
+                        <img src="images/herring.jpg" style="width:100%">
+                        <p class="cnt caption">In the Netherlands, it’s all about the herring. As a
+                            seafaring country, fish has always been
+                            a part of the national diet. With the unique Dutch herring preservation process, the small
+                            silvery fish has become a symbol of Dutch food. It’s best to eat during the first catch of
+                            the season.</p>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">5/9</div>
+                        <img src="images/fullbreakfast.jpg" style="width:100%">
+                        <p class="cnt caption">Don’t think that the Full English with eggs, ham, beans,
+                            fried tomatoes and black pudding is
+                            all that the English breakfast has to offer. Besides the good ol’ fry-up, there’s the greasy
+                            bacon butty sandwich. In London, you’ll want to try the bacon butty sandwich at this East
+                            London bakery.</p>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">6/9</div>
+                        <img src="images/goulash.jpg" style="width:100%">
+                        <p class="cnt caption">The hearty Hungarians have been eating goulash for
+                            centuries. It’s usually a thick stew (or
+                            sometimes a soup) with meat and vegetables, seasoned with paprika. It’s best served in a
+                            bread bowl and with a beer.</p>
+
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">7/9</div>
+                        <img src="images/struklji.jpg" style="width:100%">
+                        <p class="cnt caption">You’ll find amazing prosciutto, fine cheeses and hearty
+                            meat dishes in Slovenia.But it’s not
+                            all savory, the sweets are good too. And the best of the best is a crepe-like dish called
+                            Štruklji. These cottage cheese pancakes are made with tarragon (usually reserved for savory
+                            dishes).</p>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">8/9</div>
+                        <img src="images/crème_catalan.jpg" style="width:100%">
+                        <p class="cnt caption">Crème brulee may be very French, but the best custard
+                            dish (with burnt caramel) comes from
+                            Spain’s northern state of Catalonia. Crème Catalan is cooked on the stove rather than the
+                            oven. Just about Vinegar will serve the dish outside France.</p>
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">9/9</div>
+                        <img src="images/crepes.jpg" style="width:100%">
+                        <p class="cnt caption">Besides baguettes, there’s nothing more French than a
+                            crepe—savoury or sweet. The best
+                            crepes are the simplest ones and can be found throughout France — we like the ones with
+                            Nutella on the inside!</p>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </div>
+
+        </div>
+
+        <ul class="pagination">
+            <li><a href="regular.html">1</a></li>
+            <li><a href="regular2.html">2</a></li>
+        </ul>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="Vinegar_homepage.html">Home</a></li>
+                            <li><a href="Vinegar_about.html">About us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="Awards.html">Awards</a></li>
+                            <li><a href="Vinegar_catering.html">Catering</a></li>
+                            <li><a href="Vinegar_recipe.html">Recipe of the month </a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="regular.html">Regular</a></li>
+                            <li><a href="Lunch.html">Lunch</a></li>
+                            <li><a href="snacks.html">Snacks</a></li>
+                            <li><a href="desert.html">Dessert</a></li>
+                            <li><a href="beverage.html">Beverages</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-6 col-md-2 item">
+
+                        <ul>
+                            <li><a href="Vinegar_contactus.html">Contact us</a></li>
+                            <li><a href="Vinegar_feedback.html">Feedback</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Vinegar Food Restaurant</h3>
+                        <p
+                            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 1.5rem;">
+                            Vinegar Food Restaurant is a registered brand of JADONS Ltd. <br>
+                            Business registration number: 2233445566 issued by the Ministry of Commerce <br>
+                            Headquarter office: 90 Pasteur Street, District 1, Ho Chi Minh City, Viet Nam. <br>
+                            Hotline: +84 1900 9999 - +84 1900 9898 <br>
+                        </p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                                class="icon ion-social-twitter"></i></a><a href="#"><i
+                                class="icon ion-social-snapchat"></i></a><a href="#"><i
+                                class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">&copy 1990 - 2020 Vinegar Food Restaurant - All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
+
+</html>

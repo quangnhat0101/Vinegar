@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/vinegar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<style>
+    body {
+        font-family: Verdana, sans-serif;
+        background-color: rgba(241, 225, 158, 0.589);
+    }
+
+    h2 {
+        margin-top: 7rem;
+    }
+
+    .cnt {
+        background-color: rgb(41, 29, 29);
+        /*width: 41rem;
+        height: 18rem;*/
+        color: white;
+        font-size: 15px;
+        padding: 1rem;
+        text-align: justify;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .row>.food {
+        padding: 1rem;
+    }
+
+    .food {
+        float: left;
+        padding: 1rem;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 7rem;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(240, 154, 154, 0.493);
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        width: 30%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: rgb(236, 145, 145);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .mySlides {
+        display: none;
+    }
+
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    .demo {
+        opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+    img.hover-shadow {
+        transition: 0.3s;
+    }
+
+    .hover-shadow:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .pagination {
+        border: hidden;
+        padding-left: 110rem;
+    }
+
+   
+</style>
+
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+
+                <a href="Vinegar_homepage.html"><img style="width: 12%;" src="images/logo5.png" alt="" srcset=""></a>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Vinegar_homepage.html">HOME</a></li>
+                    <li><a href="Vinegar_about.html">ABOUT US</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MEALS</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="regular.html">Regular</a></li>
+                            <li><a href="Lunch.html">Lunch</a></li>
+                            <li><a href="snacks.html">Snacks</a></li>
+                            <li><a href="desert.html">Desert</a></li>
+                            <li><a href="beverage.html">Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="Awards.html">AWARDS</a></li>
+                    <li><a href="Vinegar_catering.html">CATERING</a></li>
+                    <li><a href="Vinegar_recipe.html">RECIPE OF THE MONTH</a></li>
+                    <li><a href="Vinegar_contactus.html">CONTACT US</a></li>
+                    <li><a href="Vinegar_feedback.html">FEEDBACK</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <div class="header_padding" style=" margin-top: 8rem; margin-bottom: 2rem; text-align: center;">
+            <H1
+                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(141, 109, 67);">
+                - REGULAR -</H1>
+        </div>
+        <hr>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 food">
+                    <img src="images/beer.jpg" style="width:100%" onclick="openModal();currentSlide(1)"
+                        class="hover-shadow cursor">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img src="images/haggis.jpg" style="width:100%" onclick="openModal();currentSlide(2)"
+                        class="hover-shadow cursor">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img src="images/stew.jpg" style="width:100%" onclick="openModal();currentSlide(3)"
+                        class="hover-shadow cursor">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img src="images/pierogi.jpg" style="width:100%" onclick="openModal();currentSlide(4)"
+                        class="hover-shadow cursor">
+                </div>
+
+                <div class="col-sm-6 col-md-3 food">
+                    <img src="images/goulash.jpg" style="width:100%" onclick="openModal();currentSlide(5)"
+                        class="hover-shadow cursor">
+                </div>
+            </div>
+        </div>
+
+
+        <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="mySlides">
+                    <div class="numbertext">1/6</div>
+                    <img src="images/beer.jpg" style="width:100%">
+                    <p class="cnt"> Okay, so beer isn’t a food. But if you’ve been to Belgium, you’ll know that beer is
+                        practically a meal here. In a country with over 150 different breweries, Belgium is spoiled
+                        for choice in types of beer. You can have it in Vinegar.</p>
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2/6</div>
+                    <img src="images/haggis.jpg" style="width:100%">
+                    <p class="cnt">Sheep’s stomach stuffed with oats and other spices? Don’t let the description scare
+                        you —you
+                        just might be surprised how tasty it actually is! In Edinburgh, you can even get haggis
+                        burgers! And if you don’t care for stuffed sheep stomach, there’s always deep-fried
+                        EVERYTHING in Vinegar.</p>
+
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3/6</div>
+                    <img src="images/stew.jpg" style="width:100%">
+                    <p class="cnt">Maybe it’s the famously blustery Irish weather, but there’s little better than a good
+                        Irish
+                        stew on a wet day in Vinegar. (And really – most days are wet!) Traditionally made from
+                        lamb, this stew is best when it comes with a Guinness.</p>
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">4/6</div>
+                    <img src="images/pierogi.jpg" style="width:100%">
+                    <p class="cnt">It seems every culture in the world has some sort of dumplings dish and in Poland,
+                        it’s
+                        called a pierogi. Most traditionally they’re baked or fired in butter with onions—and almost
+                        always served with sauerkraut! They can be vegetarian (in Poland, that means potatoes) or
+                        with ground meat. Vinegar is dedicated to pierogi!</p>
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">5/6</div>
+                    <img src="images/banitsa.jpg" style="width:100%">
+                    <p class="cnt">The best of Bulgarian food lies in its Banitsa (Баница), a mixture of eggs, Bulgarian
+                        feta
+                        cheese and filo pastry baked in an oven. Served as a breakfast food, it can be eaten hot or
+                        cold, but it’s delicious at any time of day. Banitsa with spinach (spanachena banitsa), milk
+                        (mlechna banitsa) or pumpkin (tikvenik/Тиквеник) are all excellent choices in Vinegar's
+                        menu.</p>
+
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+
+        <ul class="pagination">
+            <li><a href="regular.html">1</a></li>
+            <li><a href="regular2.html">2</a></li>
+        </ul>
+    </div>
+
+        <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-2 item">
+
+                            <ul>
+                                <li><a href="Vinegar_homepage.html">Home</a></li>
+                                <li><a href="Vinegar_about.html">About us</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="Awards.html">Awards</a></li>
+                                <li><a href="Vinegar_catering.html">Catering</a></li>
+                                <li><a href="Vinegar_recipe.html">Recipe of the month </a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-2 item">
+    
+                            <ul>
+                                <li><a href="regular.html">Regular</a></li>
+                                <li><a href="Lunch.html">Lunch</a></li>
+                                <li><a href="snacks.html">Snacks</a></li>
+                                <li><a href="desert.html">Dessert</a></li>
+                                <li><a href="beverage.html">Beverages</a></li>
+                            </ul>
+                        </div>
+    
+                        <div class="col-sm-6 col-md-2 item">
+    
+                            <ul>
+                                <li><a href="Vinegar_contactus.html">Contact us</a></li>
+                                <li><a href="Vinegar_feedback.html">Feedback</a></li>
+    
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Vinegar Food Restaurant</h3>
+                            <p
+                                style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 1.5rem;">
+                                Vinegar Food Restaurant is a registered brand of JADONS Ltd. <br>
+                                Business registration number: 2233445566 issued by the Ministry of Commerce <br>
+                                Headquarter office: 90 Pasteur Street, District 1, Ho Chi Minh City, Viet Nam. <br>
+                                Hotline: +84 1900 9999 - +84 1900 9898 <br>
+                            </p>
+                        </div>
+                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a
+                                href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i
+                                    class="icon ion-social-snapchat"></i></a><a href="#"><i
+                                    class="icon ion-social-instagram"></i></a></div>
+                    </div>
+                    <p class="copyright">&copy 1990 - 2020 Vinegar Food Restaurant - All Rights Reserved.</p>
+                </div>
+            </footer>
+        </div>
+</body>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
+
+</html>
